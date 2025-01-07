@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import React, {
   createContext,
   useContext,
@@ -17,11 +19,12 @@ interface Post {
   id: number;
   title: string;
   content: string;
-  author: string;
-  date: string;
-  category: string;
-  tags: string[];
-  featuredImage: string;
+  author_id: number;
+  categoryId?: number;
+  tags?: string[];
+  featuredImage?: string;
+  created_at: Date;
+  updated_at: Date;
 }
 
 const PostContext = createContext<PostContextType | undefined>(undefined);
@@ -30,13 +33,17 @@ export const PostProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [currentPost, setCurrentPost] = useState<Post | null>(null);
+  const [currentPost, setCurrentPost] = useState<Post[]>([]);
 
   const fetchPosts = useCallback(async () => {
-    // Here you would make an API call to fetch posts
-    const fetchedPosts: Post[] = []; // Mock data or from API
-    setPosts(fetchedPosts);
-  }, []); // Empty array if no dependencies, otherwise list them
+    try {
+      const response = await axios.get<Post[]>("/posts"); // Replace with your actual endpoint
+      setPosts(response.data);
+    } catch (error) {
+      console.error("Failed to fetch posts:", error);
+      // Handle error appropriately, like setting an error state or showing a notification
+    }
+  }, []); // Empty dependency array if no dependencies, otherwise list them
 
   return (
     <PostContext.Provider

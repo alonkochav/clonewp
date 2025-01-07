@@ -40,7 +40,7 @@ const Home: React.FC = () => {
               content={post.content}
               author={post.author}
               date={post.date}
-              category={post.category}
+              categoryId={post.categoryId}
               tags={post.tags}
               featuredImage={post.featuredImage}
             />

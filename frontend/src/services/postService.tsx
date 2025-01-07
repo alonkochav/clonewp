@@ -5,17 +5,15 @@ interface Post {
   title: string;
   content: string;
   author_id: number;
-  category_id?: number;
-  created_at: string;
-  updated_at: string;
-  date: string;
-  category?: string;
+  categoryId?: number;
   tags?: string[];
   featuredImage?: string;
+  created_at: Date;
+  updated_at: Date;
 }
 
 interface PostResponse {
-  data: Post;
+  data: Post[];
   pagination?: { current_page: number; total_pages: number };
 }
 

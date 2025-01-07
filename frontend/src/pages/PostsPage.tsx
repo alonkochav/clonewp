@@ -13,7 +13,6 @@ interface Post {
 }
 
 const PostsPage: React.FC = () => {
-  // const [posts, setPosts] = useState<Post[] | undefined>();
   const [posts, setPosts] = useState<Post[]>();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -38,7 +37,7 @@ const PostsPage: React.FC = () => {
 
   return (
     <div>
-      {posts.map((post) => (
+      {posts?.map((post) => (
         <div key={post.id}>{post.title}</div>
       ))}
     </div>

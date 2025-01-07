@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import { Post, PostResponse } from '../../types'; // Assuming you have a types file with these interfaces defined
+import { Post, PostResponse } from '../../store/types'; // Assuming you have a types file with these interfaces defined
 
 // Action types
 export const FETCH_POSTS_REQUEST = 'FETCH_POSTS_REQUEST';

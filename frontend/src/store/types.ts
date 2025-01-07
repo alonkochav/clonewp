@@ -1,11 +1,11 @@
-// src/types.ts
 export interface Post {
-    id: number;
-    title: string;
-    content: string;
-    author: string;
-    date: string;
-    category?: string;
-    tags?: string[];
-    featuredImage?: string;
+  id: number;
+  title: string;
+  content: string;
+  author_id: number;
+  categoryId?: number;
+  tags?: string[];
+  featuredImage?: string;
+  created_at: Date;
+  updated_at: Date;
   }

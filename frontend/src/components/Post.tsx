@@ -6,8 +6,9 @@ interface PostProps {
   title: string;
   content: string;
   author: string;
-  date: string;
-  category?: string;
+  created_at: Date;
+  updated_at: Date;
+  categoryId?: string;
   tags?: string[];
   featuredImage?: string;
 }
@@ -18,7 +19,7 @@ const Post: React.FC<PostProps> = ({
   content,
   author,
   date,
-  category,
+  categoryId,
   tags,
   featuredImage,
 }) => {

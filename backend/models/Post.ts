@@ -7,7 +7,7 @@ export interface Post {
     excerpt?: string;
     status: 'published' | 'draft'; // Assuming these are the only possible statuses
     author_id: number;
-    category_id?: number;
+    categoryId?: number;
     created_at: Date;
     updated_at: Date;
 }
