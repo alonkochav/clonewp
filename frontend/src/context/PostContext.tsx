@@ -17,7 +17,11 @@ interface Post {
   id: number;
   title: string;
   content: string;
-  // Add other post properties as needed
+  author: string;
+  date: string;
+  category: string;
+  tags: string[];
+  featuredImage: string;
 }
 
 const PostContext = createContext<PostContextType | undefined>(undefined);

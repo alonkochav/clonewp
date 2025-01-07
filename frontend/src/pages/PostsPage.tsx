@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from "react";
-import postService from "../services/postService";
+import postService from "../services/postService"; // Adjust the path as necessary
+
+interface Post {
+  id: number;
+  title: string;
+  content: string;
+  author_id: number;
+  date: string;
+  categoryId?: number;
+  tags?: string[];
+  featuredImage?: string;
+}
 
 const PostsPage: React.FC = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  // const [posts, setPosts] = useState<Post[] | undefined>();
+  const [posts, setPosts] = useState<Post[]>();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

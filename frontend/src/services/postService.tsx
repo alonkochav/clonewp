@@ -8,10 +8,14 @@ interface Post {
   category_id?: number;
   created_at: string;
   updated_at: string;
+  date: string;
+  category?: string;
+  tags?: string[];
+  featuredImage?: string;
 }
 
 interface PostResponse {
-  data: Post[];
+  data: Post;
   pagination?: { current_page: number; total_pages: number };
 }
 

@@ -39,7 +39,7 @@ const Home: React.FC = () => {
               title={post.title}
               content={post.content}
               author={post.author}
-              date={post.created_at}
+              date={post.date}
               category={post.category}
               tags={post.tags}
               featuredImage={post.featuredImage}
